@@ -15,10 +15,12 @@ data/
 # Ignore generated outputs
 outputs/
 
+# Tools
+tools/
+
 # Streamlit cache
 .streamlit/
 
 # Mac junk
 .DS_Store
-
 
