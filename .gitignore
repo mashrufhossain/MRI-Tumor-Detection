@@ -12,9 +12,8 @@ weights/
 # Dataset folders
 data/
 
-# Outputs
-*.csv
-*.xlsx
+# Ignore generated outputs
+outputs/
 
 # Streamlit cache
 .streamlit/
@@ -22,8 +21,4 @@ data/
 # Mac junk
 .DS_Store
 
-# Ignore generated outputs
-outputs/
-*.csv
-*.png
 
