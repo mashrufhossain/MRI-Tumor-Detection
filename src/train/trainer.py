@@ -83,7 +83,7 @@ def train_model(model, train_loader, test_loader, epochs, device):
         # ---- Save best model ----
         if val_acc > best_acc:
             best_acc = val_acc
-            torch.save(model.state_dict(), "best_model.pth")
+            torch.save(model.state_dict(), "weights/best_model.pth")
             print(f"✅ Saved new best model at epoch {epoch} (Val Acc: {val_acc:.2f}%)")
 
     print("✅ Training complete.")

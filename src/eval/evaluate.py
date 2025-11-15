@@ -22,13 +22,33 @@ def get_device():
 
 def load_model(device):
     model = BrainTumorResNet(num_classes=len(CLASS_NAMES))
-    checkpoint_path = "best_model.pth"  # adjust path if needed
+    checkpoint_path = "weights/best_model.pth"
     state_dict = torch.load(checkpoint_path, map_location=device)
     model.load_state_dict(state_dict)
     model.to(device)
     model.eval()
     return model
 
+def print_confusion_matrix(cm, class_names):
+    # pad class names for alignment
+    max_len = max(len(cls) for cls in class_names)
+    pad = max_len + 2
+
+    # header row
+    header = " " * (pad + 10) + "Predicted →"
+    print(header)
+
+    # predicted class labels
+    pred_header = " " * pad + " ".join(f"{cls:>{pad}}" for cls in class_names)
+    print(pred_header)
+
+    # each row
+    print("Actual ↓")
+    for i, actual_class in enumerate(class_names):
+        row = f"{actual_class:<{pad}}"
+        for j in range(len(class_names)):
+            row += f"{cm[i, j]:>{pad}}"
+        print(row)
 
 def evaluate():
     device = get_device()
@@ -64,8 +84,9 @@ def evaluate():
 
     # ---- Confusion matrix ----
     cm = confusion_matrix(y_true, y_pred)
-    print("Confusion Matrix (raw counts):")
-    print(cm)
+    print("\nNeatly formatted confusion matrix:")
+    print_confusion_matrix(cm, class_names)
+
 
     # ---- Classification report ----
     print("\nDetailed classification report:")
@@ -98,7 +119,7 @@ def evaluate():
             )
 
     fig.tight_layout()
-    out_path = "confusion_matrix.png"
+    out_path = "outputs/confusion_matrices/confusion_matrix.png"
     plt.savefig(out_path, dpi=150)
     plt.close(fig)
 

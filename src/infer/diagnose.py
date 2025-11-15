@@ -28,7 +28,7 @@ print(f"🖥️ Using device: {device}")
 
 def load_model():
     model = BrainTumorResNet(num_classes=len(CLASS_NAMES))
-    checkpoint_path = "best_model.pth"  # adjust if path differs
+    checkpoint_path = "weights/best_model.pth"
     state_dict = torch.load(checkpoint_path, map_location=device)
     model.load_state_dict(state_dict)
     model.to(device)
@@ -153,7 +153,7 @@ def main():
         ).strip().lower()
 
         if choice == "y":
-            default_name = "predictions.csv"
+            default_name = "outputs/predictions/predictions.csv"
             user_filename = input(
                 f"📄 Enter filename (press Enter for '{default_name}'): "
             ).strip()

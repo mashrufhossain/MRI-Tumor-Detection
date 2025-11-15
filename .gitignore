@@ -7,8 +7,7 @@ venv/
 .venv/
 
 # Model weights
-*.pth
-*.pt
+weights/
 
 # Dataset folders
 data/
@@ -22,3 +21,9 @@ data/
 
 # Mac junk
 .DS_Store
+
+# Ignore generated outputs
+outputs/
+*.csv
+*.png
+
