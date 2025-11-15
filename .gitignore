@@ -1,0 +1,24 @@
+# Python junk
+__pycache__/
+*.pyc
+
+# Virtual env
+venv/
+.venv/
+
+# Model weights
+*.pth
+*.pt
+
+# Dataset folders
+data/
+
+# Outputs
+*.csv
+*.xlsx
+
+# Streamlit cache
+.streamlit/
+
+# Mac junk
+.DS_Store
