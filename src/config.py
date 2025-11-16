@@ -4,12 +4,12 @@ import torchvision.transforms as T
 # ----- Paths -----
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
-TRAIN_DIR = os.path.join(DATA_DIR, "Training")
-TEST_DIR  = os.path.join(DATA_DIR, "Testing")
+TRAIN_DIR = os.path.join(DATA_DIR, "combined_training")
+TEST_DIR  = os.path.join(DATA_DIR, "combined_testing")
 
 # ----- Training hyperparams -----
 BATCH_SIZE = 32
-EPOCHS = 20
+EPOCHS = 15
 
 # Phase 1 (head-only) and Phase 2 (fine-tune backbone)
 LR_HEAD = 1e-3         # head warmup

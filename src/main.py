@@ -22,7 +22,7 @@ def main():
     model = BrainTumorResNet(num_classes=len(classes), freeze_backbone=True).to(device)
 
     # ---- Try loading best checkpoint ----
-    checkpoint_path = "best_model.pth"
+    checkpoint_path = "weights/best_model.pth"
     try:
         model.load_state_dict(torch.load(checkpoint_path, map_location=device))
         print(f"✅ Loaded best model from {checkpoint_path}")

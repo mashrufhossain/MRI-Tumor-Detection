@@ -1,24 +1,61 @@
+# --------------------------------
 # Python junk
+# --------------------------------
 __pycache__/
 *.pyc
 
-# Virtual env
+# --------------------------------
+# Virtual environment
+# --------------------------------
 venv/
 .venv/
 
-# Model weights
-*.pth
-*.pt
+# --------------------------------
+# Python version file (pyenv)
+# --------------------------------
+.python-version
 
-# Dataset folders
-data/
+# --------------------------------
+# Model weights directory
+# Keep folder, ignore contents
+# --------------------------------
+weights/*
+!weights/.gitkeep
 
-# Outputs
-*.csv
-*.xlsx
+# --------------------------------
+# Dataset directory
+# Keep folder, ignore contents
+# --------------------------------
+data/*
+!data/.gitkeep
 
+# --------------------------------
+# Generated outputs
+# Keep folders, ignore contents
+# --------------------------------
+outputs/**
+
+!outputs/logs/
+!outputs/confusion_matrices/
+
+
+outputs/logs/*
+outputs/confusion_matrices/*
+
+!outputs/logs/.gitkeep
+!outputs/confusion_matrices/.gitkeep
+
+# --------------------------------
 # Streamlit cache
+# --------------------------------
 .streamlit/
 
+# --------------------------------
 # Mac junk
+# --------------------------------
 .DS_Store
+
+# --------------------------------
+# Scripts/Notes
+# --------------------------------
+tools/
