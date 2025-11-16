@@ -9,7 +9,7 @@ TEST_DIR  = os.path.join(DATA_DIR, "Testing")
 
 # ----- Training hyperparams -----
 BATCH_SIZE = 32
-EPOCHS = 20
+EPOCHS = 15
 
 # Phase 1 (head-only) and Phase 2 (fine-tune backbone)
 LR_HEAD = 1e-3         # head warmup
