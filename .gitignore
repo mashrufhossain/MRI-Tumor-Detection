@@ -31,10 +31,19 @@ data/*
 
 # --------------------------------
 # Generated outputs
-# Keep folder, ignore contents
+# Keep folders, ignore contents
 # --------------------------------
-outputs/*
-!outputs/.gitkeep
+outputs/**
+
+!outputs/logs/
+!outputs/confusion_matrices/
+
+
+outputs/logs/*
+outputs/confusion_matrices/*
+
+!outputs/logs/.gitkeep
+!outputs/confusion_matrices/.gitkeep
 
 # --------------------------------
 # Streamlit cache
